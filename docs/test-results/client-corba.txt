@@ -1,0 +1,10 @@
+Création 101 : 1000.0
+Après versement : 1200.0
+Après retrait : code=101, solde=1050.0
+Liste des comptes (2) :
+  code=101, solde=1050.0
+  code=102, solde=500.0
+500 euros = 1500.0 dinars
+Après doublon : 1050.0
+Après retrait excessif : 1050.0
+Compte 999 : code=-1 (absent si -1)

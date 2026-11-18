@@ -1,0 +1,5 @@
+Parsing Banque.idl
+done  - Banque.idl
+
+Generating corbaBanque
+done   -   corbaBanque

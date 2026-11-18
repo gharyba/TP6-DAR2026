@@ -1,0 +1,6 @@
+C:\Users\Dell\Desktop\lsi3_2026\DAR\tp\tp6\TP6-DAR2026\TP6_CorbaBanque_Server\src\corbaBanque\_IBanqueRemoteStub.java:144: warning: IORCheckImpl is internal proprietary API and may be removed in a future release
+     com.sun.corba.se.impl.orbutil.IORCheckImpl.check(str, "corbaBanque._IBanqueRemoteStub");
+                                  ^
+Note: C:\Users\Dell\Desktop\lsi3_2026\DAR\tp\tp6\TP6-DAR2026\TP6_CorbaBanque_Server\src\corbaBanque\IBanqueRemotePOA.java uses unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+1 warning

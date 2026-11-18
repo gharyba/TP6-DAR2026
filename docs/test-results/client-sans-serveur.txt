@@ -1,0 +1,13 @@
+Appel du service banque impossible : javax.naming.NameNotFoundException [Root exception is org.omg.CosNaming.NamingContextPackage.NotFound: IDL:omg.org/CosNaming/NamingContext/NotFound:1.0]
+javax.naming.NameNotFoundException [Root exception is org.omg.CosNaming.NamingContextPackage.NotFound: IDL:omg.org/CosNaming/NamingContext/NotFound:1.0]
+	at com.sun.jndi.cosnaming.ExceptionMapper.mapException(ExceptionMapper.java:63)
+	at com.sun.jndi.cosnaming.CNCtx.callResolve(CNCtx.java:515)
+	at com.sun.jndi.cosnaming.CNCtx.lookup(CNCtx.java:555)
+	at com.sun.jndi.cosnaming.CNCtx.lookup(CNCtx.java:532)
+	at javax.naming.InitialContext.lookup(InitialContext.java:417)
+	at corbaClient.BanqueClient.main(BanqueClient.java:13)
+Caused by: org.omg.CosNaming.NamingContextPackage.NotFound: IDL:omg.org/CosNaming/NamingContext/NotFound:1.0
+	at org.omg.CosNaming.NamingContextPackage.NotFoundHelper.read(NotFoundHelper.java:72)
+	at org.omg.CosNaming._NamingContextStub.resolve(_NamingContextStub.java:251)
+	at com.sun.jndi.cosnaming.CNCtx.callResolve(CNCtx.java:501)
+	... 4 more

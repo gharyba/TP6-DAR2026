@@ -1,0 +1,10 @@
+ORB initialisé.
+POA activé.
+Service banque enregistré avec JNDI.
+Serveur en attente des clients...
+Compte 101 créé.
+Versement de 200.0 sur le compte 101.
+Retrait de 150.0 sur le compte 101.
+Compte 102 créé.
+Création refusée : le compte 101 existe déjà.
+Retrait refusé pour le compte 101.

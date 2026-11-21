@@ -8,6 +8,14 @@ Appeler à distance les opérations d'un service bancaire avec CORBA. Le client 
 
 Le serveur permet de créer, consulter et lister des comptes, de verser, de retirer et de convertir un montant. Les interfaces CORBA proviennent du fichier `Banque.idl`.
 
+## Base du cours
+
+Le travail suit le chapitre 3 CORBA : définition IDL, génération avec `idlj`, servant héritant de `IBanqueRemotePOA`, initialisation de l'ORB, activation du POA, publication avec JNDI et récupération du stub avec `IBanqueRemoteHelper.narrow`.
+
+Les six opérations demandées sont appelées dans le client. Les comptes sont conservés en mémoire dans une collection Java. Les contrôles restent simples : code positif, solde initial positif ou nul, absence de doublon, montant positif et solde suffisant pour un retrait. Un compte absent est représenté par un code égal à `-1`. Le taux pédagogique de conversion est celui du cours : montant multiplié par 3.
+
+Le code source ne contient pas de commentaires. Les classes du package `corbaBanque` sont générées par `idlj` ; leurs commentaires ont été retirés.
+
 ## Lancement
 
 Dans PowerShell, depuis `TP6-DAR2026`, utiliser le JDK 8 présent dans le dossier voisin `.tools` :

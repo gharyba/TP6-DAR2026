@@ -14,7 +14,6 @@ public class BanqueClient {
             IBanqueRemote banque = IBanqueRemoteHelper.narrow(reference);
             contexte.close();
 
-            // Chaque opération ci-dessous est appelée sur le service distant.
             banque.creerCompte(new Compte(101, 1000));
             System.out.println("Création 101 : " + banque.getCompte(101).solde);
 

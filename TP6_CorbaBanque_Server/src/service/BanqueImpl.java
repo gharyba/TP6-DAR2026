@@ -5,13 +5,12 @@ import java.util.Map;
 import corbaBanque.Compte;
 import corbaBanque.IBanqueRemotePOA;
 
-// Le traitement des comptes se fait uniquement sur le serveur.
 public class BanqueImpl extends IBanqueRemotePOA {
     private final Map<Integer, Compte> comptes = new LinkedHashMap<Integer, Compte>();
 
     @Override
     public synchronized void creerCompte(Compte cpte) {
-        if (cpte.code <= 0 || cpte.solde < 0 || Float.isNaN(cpte.solde) || Float.isInfinite(cpte.solde)) {
+        if (cpte.code <= 0 || cpte.solde < 0) {
             System.out.println("Création refusée : compte invalide.");
         } else if (comptes.containsKey(cpte.code)) {
             System.out.println("Création refusée : le compte " + cpte.code + " existe déjà.");
@@ -24,8 +23,7 @@ public class BanqueImpl extends IBanqueRemotePOA {
     @Override
     public synchronized void verser(float mt, int code) {
         Compte compte = comptes.get(code);
-        if (compte == null || mt <= 0 || Float.isNaN(mt) || Float.isInfinite(mt)
-                || Float.isInfinite(compte.solde + mt)) {
+        if (compte == null || mt <= 0) {
             System.out.println("Versement refusé pour le compte " + code + ".");
         } else {
             compte.solde += mt;
@@ -36,8 +34,7 @@ public class BanqueImpl extends IBanqueRemotePOA {
     @Override
     public synchronized void retirer(float mt, int code) {
         Compte compte = comptes.get(code);
-        if (compte == null || mt <= 0 || Float.isNaN(mt) || Float.isInfinite(mt)
-                || mt > compte.solde) {
+        if (compte == null || mt <= 0 || mt > compte.solde) {
             System.out.println("Retrait refusé pour le compte " + code + ".");
         } else {
             compte.solde -= mt;
@@ -49,7 +46,7 @@ public class BanqueImpl extends IBanqueRemotePOA {
     public synchronized Compte getCompte(int code) {
         Compte compte = comptes.get(code);
         if (compte == null) {
-            // Le code -1 indique qu'aucun compte n'a été trouvé.
+
             return new Compte(-1, 0);
         }
         return new Compte(compte.code, compte.solde);

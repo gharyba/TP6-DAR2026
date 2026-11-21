@@ -46,7 +46,6 @@ public class BanqueImpl extends IBanqueRemotePOA {
     public synchronized Compte getCompte(int code) {
         Compte compte = comptes.get(code);
         if (compte == null) {
-
             return new Compte(-1, 0);
         }
         return new Compte(compte.code, compte.solde);
@@ -57,7 +56,8 @@ public class BanqueImpl extends IBanqueRemotePOA {
         Compte[] resultat = new Compte[comptes.size()];
         int i = 0;
         for (Compte compte : comptes.values()) {
-            resultat[i++] = new Compte(compte.code, compte.solde);
+            resultat[i] = new Compte(compte.code, compte.solde);
+            i++;
         }
         return resultat;
     }
